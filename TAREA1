@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class Empleado {
+private:
+    string nombre;
+    int edad;
+    double sueldo;
+public:
+    Empleado(string nombre, int edad, double sueldo) : nombre(nombre), edad(edad), sueldo(sueldo) {}
+
+    void calcularAumento(double porcentaje) {
+        sueldo *= (1 + porcentaje/100);
+    }
+
+    void mostrarDatos() {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Edad: " << edad << endl;
+        cout << "Sueldo: " << sueldo << endl;
+    }
+};
+
+int main() {
+    Empleado emp1("Juan Perez", 30, 1500.50);
+    emp1.mostrarDatos();
+    emp1.calcularAumento(10);
+    emp1.mostrarDatos();
+
+    return 0;
+}
