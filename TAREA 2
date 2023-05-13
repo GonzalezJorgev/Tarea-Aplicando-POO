@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Estudiante {
+private:
+    string nombre;
+    int edad;
+public:
+    Estudiante() : nombre(""), edad(0) {}
+
+    Estudiante(string nombre, int edad) : nombre(nombre), edad(edad) {}
+
+    void setNombre(string nombre) {
+        this->nombre = nombre;
+    }
+
+    void setEdad(int edad) {
+        this->edad = edad;
+    }
+
+    string getNombre() {
+        return nombre;
+    }
+
+    int getEdad() {
+        return edad;
+    }
+};
+
+int main() {
+    Estudiante est1;
+    Estudiante est2("Ana Perez", 20);
+
+    est1.setNombre("Pedro Martinez");
+    est1.setEdad(25);
+
+    cout << "Nombre del estudiante 1: " << est1.getNombre() << endl;
+    cout << "Edad del estudiante 1: " << est1.getEdad() << endl;
+
+    cout << "Nombre del estudiante 2: " << est2.getNombre() << endl;
+    cout << "Edad del estudiante 2: " << est2.getEdad() << endl;
+
+    return 0;
+}
